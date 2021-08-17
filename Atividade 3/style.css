@@ -9,6 +9,10 @@ h1,h2{
     font-family: 'Julius Sans One', sans-serif;
 }
 
+*::selection{
+    color: #fff;
+    background-color: var(--main);
+}
 
 * {
     margin: 0;
@@ -165,6 +169,8 @@ footer {
     font-size: 0.6rem;
     color: #fff;
 }
+
+
 /* Mobile */
 
 
