@@ -11,4 +11,6 @@ width="100%" height="5px">
 
 ### Atividades:
 - [Atividade 1](https://github.com/NadyCarboni/Pweb/tree/main/Atividade%201)
+- [Atividade 2](https://github.com/NadyCarboni/Pweb/tree/main/Atividade%202)
+- [Atividade 3](https://github.com/NadyCarboni/Pweb/tree/main/Atividade%203)
 <p Align=center>
