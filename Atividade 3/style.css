@@ -177,5 +177,10 @@ footer {
         margin: 0.2rem 0.5rem;
      }
 
+     #main-article .post .text ul {
+        font-size: 0.8rem;
+        text-align: justify;
+        margin: 0.2rem 1rem;
+    }
      
 }
