@@ -124,8 +124,11 @@ body {
    
 } 
 
-#main-article .post .text .img2 {
-    
+#main-article .post .text .img2 img{
+    height: 10rem;
+    border-radius: 50%;
+    margin-top: 2rem;
+     width: auto;
 }
 
 #main-article .post .text blockquote {
