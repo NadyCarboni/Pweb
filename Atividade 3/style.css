@@ -124,12 +124,6 @@ body {
    
 } 
 
-#main-article .post .text .img2 img{
-    height: 10rem;
-    border-radius: 50%;
-    margin-top: 2rem;
-     width: auto;
-}
 
 #main-article .post .text blockquote {
     background-color: #eee;
@@ -139,7 +133,29 @@ body {
     border-radius: 2px;
 }
 
+#main-article .post .text #CSS, 
+#main-article .post .text #Conclusão,
+#main-article .post .text #Referencias {
+    margin-top: 0.5rem;
+}
 
+#main-article .post .text ul {
+    font-size: 0.8rem;
+    text-align: justify;
+    margin: 0.2rem 2rem;
+}
+
+#CSS-svg {
+    margin-top: 0.5rem;
+    
+}
+
+#main-article .post .small{
+    font-size: 0.7rem!important;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid #ddd ;
+    
+}
 /* Mobile */
 
 
