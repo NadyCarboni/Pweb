@@ -12,5 +12,5 @@ width="100%" height="5px">
 ### Atividades:
 - [Atividade 1](https://github.com/NadyCarboni/Pweb/tree/main/Atividade%201)
 - [Atividade 2](https://github.com/NadyCarboni/Pweb/tree/main/Atividade%202)
-- [Atividade 3](https://github.com/NadyCarboni/Pweb/tree/main/Atividade%203)
+- [Atividade 3](https://github.com/NadyCarboni/Pweb/tree/main/Atividade%203) -> acesse o site [aqui](https://atividade-3.netlify.app/)!
 <p Align=center>
