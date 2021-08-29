@@ -1,0 +1,713 @@
+
+  
+
+@font-face {
+    font-family: coraline;
+    src: url(./coraline_s_cat/Coralines\ Cat.ttf);
+  }
+
+  html {
+      scroll-behavior: smooth;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+}
+
+/* Cabeçalho */
+
+header {
+    height: 100vh;
+}
+
+.caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 500;
+    color: #fff;
+    height: 100vh;
+    text-align: center;
+    width: 100%;
+    line-height: 3rem;
+    
+    
+    
+}
+.layer {
+    height: 100%;
+    background-color: black;
+    width: 100%;
+    z-index: 300!important;
+    position: absolute;
+    opacity: 0.5;
+
+}
+
+.caption h1 {
+    font-family: coraline;
+    margin: 0 2rem;
+}
+.caption p {
+    font-family: 'Noto serif JP';
+}
+
+
+.sky {
+    
+    color:#ffffff;
+    display:block;
+    font: 14px/1.3 Arial,sans-serif;
+    height:50px;
+    position:relative;
+    z-index:5;
+    height: 100%;
+
+}
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:1;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.moon {
+    height: 300px;
+    width: 300px;
+    background-color: #fff;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: rgb(245, 255, 157) 0px 0px 60px;
+    
+}
+
+.moon-shadow {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    z-index: 3;
+    border-radius: 50%;
+    opacity: 0.1;
+    filter: blur(4px);
+    left: 50%;
+    top:50%;
+    
+    transform: translate(-50%, -50%);
+    background-color: #000;
+}
+
+.moon-button-marks {
+    position: absolute;
+    display: flex;
+    z-index: 4;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+.moon-button {
+    filter: blur(2px);
+    background-color: #fff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 2rem;
+
+}
+
+
+.clouds{
+    background:transparent url(./—Pngtree—blue\ sky\ and\ white\ clouds_5627827\ 1.svg) repeat top center;
+    z-index:5;
+   position: absolute;
+   
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
+
+/* Section Window  */
+
+
+#window-box {
+    display: flex;
+    
+    background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+   
+}
+
+#window-box .title {
+    display: flex;
+    margin: 2rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Noto serif JP';
+    line-height: 4rem;
+    
+}
+
+#window-box .title span {
+    font-family: Coraline;
+    letter-spacing: 1.5rem;
+    font-size: 2rem;
+    
+}
+
+#window-box .window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+#window-box .window .bg {
+    height: 55vh;
+    background:rgb(4, 3, 34)url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+   display: flex;
+    width: 70%;
+   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    animation: moving 10s linear infinite alternate-reverse;
+    border: 5px solid #333;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 10rem 10rem 0 0 ;
+    overflow: hidden;
+}
+#window-box .window .bg::before {
+    content: '';
+    height: 55vh;
+   
+    width: 70%;
+    box-shadow: #777 0px 0px 0px 7px, 
+    #aaa 0px 0px 0px 13px,
+    #ddd 0px 0px 0px 12px,
+    #eee 0px 0px 0px 18px,
+    rgba(0, 0, 0, 0.4) 0px 2px 30px, 
+    rgba(0, 0, 0, 0.3) 0px 7px 13px 18px, 
+    rgba(0, 0, 0, 0.2) 0px -3px 10px inset;
+    
+    ;
+    position: absolute;
+    border-radius: 10rem 10rem 0 0 ;
+    border: 5px solid #333;
+    
+}
+
+#window-box .window .bg::after{
+    content: '';
+    height: 55vh;
+    width: 6px;
+    z-index: 1;
+    background-color: #777;
+    left: 50%;
+    position: absolute;
+    
+}
+
+
+@keyframes moving {
+ 
+
+	to { background-position: 100% 100% }
+}
+
+#window-box .window .bg img {
+    height: 30%;
+    animation: rodar 30s infinite;
+  
+    -webkit-filter:  drop-shadow(2px 2px 20px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(2px 2px 20px rgba(0, 0, 0, 0.8));
+  
+
+}
+
+#window-box .window .bg img[id="texture"] {
+   height: 500%;
+    width:200%;
+    
+    transform: translate(-20%,0);
+    animation: none;
+    display: block;
+    opacity: 0.3;
+    
+  
+
+}
+
+@keyframes rodar {
+
+    0% {
+        transform: translate(300%, 150%) rotate(-25deg);
+    }
+ 
+    12% {
+        transform: translate(-50%, -50%) rotate(25deg);
+    }
+
+    25% {
+        transform: translate(50%, -50%) rotate(-25deg);
+    }
+    
+    50% {
+        transform: translate(50%, 100%) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(100%, 150%) rotate(25deg);
+    }
+
+    100% {
+        transform: translate(300%, 150%) rotate(-25deg);
+    }
+
+	
+}
+.hands img{
+    height:10rem;
+    width: auto;
+    position: absolute;
+    
+}
+
+
+.blur {
+    height: 50px;
+    width: 100%;
+   background-color: #000;
+   z-index: 600;
+   position: absolute;
+   transform: translateY(-40%);
+   filter: blur(8px);
+   
+}
+
+.radius {
+    height: 100px;
+    border-radius: 50%;
+    
+}
+
+/* Seção palácio cor de rosa */
+#Palacio-cor-de-rosa {
+   
+    position: relative;
+background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center; 
+}
+#Palacio-cor-de-rosa img[id="clouds"] {
+   opacity: 0.5;
+    width: 100%;
+   
+ }
+ #Palacio-cor-de-rosa main  {
+     transform: translateY(-10rem);
+     display: flex;
+    text-align: center;
+     color: #fff;
+     justify-content: center;
+     background: url(./forest\ blur.png) no-repeat;
+     background-position: center;
+     background-size: 100%;
+     font-family: Coraline;
+     z-index: 30;
+     
+ }
+ #Palacio-cor-de-rosa main img {
+     height: 30rem;
+     width: 30rem;
+     -webkit-filter:  drop-shadow(2px 2px 0px rgba(255, 255, 255, 1));
+     filter: drop-shadow(7px 7px 0px rgba(255, 255, 255, 1));
+     animation: rotate 10s infinite;
+     
+ }
+
+
+ @keyframes rotate {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+     75% {
+         transform: rotate(10deg);
+     }
+
+     100% {
+        transform: rotate(0deg);
+     }
+ }
+#porta {
+    background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+    text-align: center;
+    color: #fff;
+    flex-direction: column;
+    font-family: 'Noto serif JP';
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 2rem 5rem;
+}
+
+
+
+ .backDoor
+ {
+   background:url(./wallpapertip_coraline-wallpaper_972291.jpg) no-repeat;
+   background-position: center;
+   position:relative;
+   width:70%;
+   height:40vh;
+   background-size: 100% ;
+   margin: 0 auto;
+   margin-top:50px;
+   transition: all 5s;
+-webkit-transition: all 5s ;
+-o-transition: all 5s ;
+-moz-transition: all 5s ;
+ }
+ .backDoor:hover {
+    background-size: 150%
+ }
+
+
+
+ 
+ .door
+ {
+    background: #111 url(./gryffyn-m-O8pEyjTnI7U-unsplash.jpg) center;
+   position:absolute;
+   top:0px;
+   left:0px;
+   width:100%;
+   height:40vh;
+  
+   transform-origin: left;
+   /*Speed of the Door animation*/
+   transition: all 0.5s ease-in-out;
+ }
+
+.door::before {
+    content: '';
+    height: 60px;
+    width: 60px;
+    background-color: #555;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transform: translateY(-50%);
+}
+ 
+ .doorOpen
+ {
+   /*prespectiv creates the door open effect*/
+   transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
+ }
+ 
+
+ #Siga {
+    background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+     width: 100%;
+     color: #fff;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     justify-content: center;
+     font-family: "Noto serif JP";
+     text-align: center;
+ }
+
+ #Siga .circus img{
+    height: 30rem;
+    filter: brightness(60%);
+   
+ }
+ /* #Siga .ratinhos {
+     position: absolute;
+ } */
+
+ #Siga .ratinhos {
+     display: flex;
+ }
+
+ #Siga .ratinhos:nth-child(odd) {
+    animation: ease-in-out 3s go alternate-reverse infinite;
+ }
+
+ #Siga .ratinhos:nth-child(even) {
+    animation: ease-in-out 4s go2 alternate infinite;
+ }
+ #Siga .ratinhos img{
+     padding: 1rem 0;
+     height: 5rem;
+    
+ }
+
+ 
+
+ #Siga #mr-bobinsky {
+     position: absolute;
+     transform: translate(-25rem, 0);
+     
+     
+ }
+
+ 
+
+
+
+ @keyframes go {
+    from {
+        transform: translate(0rem, 0rem);
+    }
+    to {
+        transform: translate(0rem, 13rem);
+    }
+ }
+
+ @keyframes go2 {
+    from {
+        transform: translate(0rem, 13rem);
+    }
+    to {
+        transform: translate(0rem, 0rem);
+    }
+ }
+
+
+
+ #criancas-fantasmas {
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     color: #fff;
+     font-family: "Noto serif JP";
+     background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+ }
+
+ #criancas-fantasmas h2 {
+     text-align: center;
+ }
+ #criancas-fantasmas .criancas {
+     display: flex;
+ }
+ #criancas-fantasmas .criancas img {
+     height: 30rem;
+     -webkit-filter:  drop-shadow(2px 2px 40px rgba(245, 255, 157 , 0.5));
+     filter: drop-shadow(7px 7px 40px rgba(245, 255, 157 , 0.5));
+     animation: movekids 5s infinite alternate-reverse ease-in-out;
+ }
+
+ @keyframes movekids {
+    to {
+        transform: translate(0rem, 3rem);
+    }
+ }
+
+ footer {
+     display: flex;
+     color: #fff;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     font-size: 0.5rem;
+     margin: 2rem;
+     font-family: 'noto serif jp';
+ }
+
+@media (max-width: 600px) {
+   .hands {
+       display: none;
+   }
+   #window-box .title h2, #window-box .title span {
+       line-height: 3rem;
+    font-size: 1.5rem;
+    
+    
+   }
+   #window-box .title span {
+    letter-spacing: 1rem;
+   }
+
+   #Palacio-cor-de-rosa main img {
+    height: 20rem;
+    width: 20rem;
+    
+    
+}
+
+#Palacio-cor-de-rosa main  {
+    font-size: 0.5rem;
+    transform: translateY(5%);
+    
+}
+
+.door {
+   
+    height:20vh;
+}
+
+.backDoor {
+    height:20vh;
+}
+
+.door::before {
+    height: 30px;
+    width:30px;
+    left: 80%;
+    background-color: #aaa;
+}
+
+#porta h2 {
+    margin: 0 2rem;
+    font-size: 1rem;
+    
+}
+
+#Siga h2 {
+    margin: 0 2rem;
+    font-size: 1rem;
+}
+#Siga .circus img {
+    height: 15rem;
+}
+
+#Siga .ratinhos img{
+    padding: 1rem 0;
+    height: 3rem;
+   
+}
+
+@keyframes go {
+    from {
+        transform: translate(0rem, 0rem);
+    }
+    to {
+        transform: translate(0rem, 6rem);
+    }
+ }
+
+ @keyframes go2 {
+    from {
+        transform: translate(0rem, 6rem);
+    }
+    to {
+        transform: translate(0rem, 0rem);
+    }
+ }
+
+ #criancas-fantasmas .criancas{
+ flex-direction: column;
+ }
+
+ #criancas-fantasmas .criancas img{
+    height: 10rem;
+    }
+
+    #criancas-fantasmas h2 {
+        font-size: 1rem;
+    }
+
+}
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
