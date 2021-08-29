@@ -22,3 +22,10 @@ element.addEventListener("click", toggleDoor);
 function toggleDoor() {
   element.classList.toggle("doorOpen");
 }
+
+const audio = document.getElementById('musica');
+
+window.onmousemove= function() {
+  audio.volume=0.2;
+ audio.play();
+};
