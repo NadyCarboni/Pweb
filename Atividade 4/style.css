@@ -232,8 +232,7 @@ header {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    touch-action: none;
--ms-touch-action: none;
+    
 
 }
 
