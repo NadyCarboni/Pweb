@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <title>Calcular média</title>
+</head>
+<!--  -->
+<style>
+
+.group .form-group {
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+<body>
+   
+    <h1 class="text-center bg-secondary py-2 text-light">Calcular média</h1>
+   <div class="container my-5" >
+       <form class="border rounded" id="form">
+        <div class="form-group m-4">
+            <label class="form-label text-secondary">Notas do aluno</label>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="nome" placeholder="Digite o nome do aluno...">
+              <label for="nome">Digite o nome do aluno...</label>
+            </div>
+<div class="group">
+               <div class="form-group">
+<div class="form-floating m-2 col-lg-1">
+              <input type="number" class="form-control" id="nota1" placeholder="nota 1">
+              <label for="nota1">Nota 1:</label>
+            </div>
+            <div class="form-floating m-2 col-lg-1">
+                <input type="number" class="form-control" id="nota2" placeholder="nota 2">
+                <label for="nota2">Nota 2:</label>
+              </div>
+              <div class="form-floating  col-lg-1 m-2">
+                <input type="number" class="form-control" id="nota3" placeholder="nota 3">
+                <label for="nota3">Nota 3:</label>
+              </div>
+            </div>
+
+        </div>
+           
+            
+         
+            
+            <div class="d-grid gap-2" id="div-btn">
+            <button class="btn btn-secondary block my-2" id="calcular">Calcular</button>
+            </div>
+            
+        </div>
+       </form>
+
+   </div>
+
+   <div id="container" class="container"></div>
+</body>
+<script src="media.js"></script>
+</html>
