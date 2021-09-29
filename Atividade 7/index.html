@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="layer"></div>
+
+  <!-- Cabeçalho -->
+
+  <header class="main-header">
+    <div class="name">
+    <h3>Rock</h3>
+    <h3>Paper</h3>
+    <h3>Scissors</h3></div>
+    <div class="score">
+      <h5>Score</h5>
+      <span class="score-span">0</span>
+    </div>
+  </header>
+
+<!-- Escolha do usuário -->
+
+<div id="choice">
+  <button value="papel" class="papel" id="papel"></button>
+  <button value="pedra" class="pedra" id="pedra"></button>
+  <button value="tesoura" class="tesoura" id="tesoura"></button>
+    
+
+</div>
+<div id="show-rules">
+<a id='mostrarRegras'href="#">Rules</a>
+</div>
+<!-- Regras -->
+
+<div id="regras">
+  <h2>Rules</h2>
+  <img src="./images/image-rules.svg" alt="">
+  <a id='close'href="#"><img src="./images/icon-close.svg" alt=""></a>
+</div>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Nádia M. Carboni</a>.
+  </footer>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  
+  AOS.init();
+</script>
+<script src="./app.js"></script>
+</html>
+
+
+
