@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário sobre o filme</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+      @media (max-width: 950px) {
+        nav {
+          display: flex;
+          text-align: center!important;
+          justify-content: center!important;
+          align-items: center!important;
+        }
+        nav .container-fluid {
+          display: flex;
+          text-align: center!important;
+          justify-content: center!important;
+          align-items: center!important;
+        }
+      }
+
+      
+    </style>
+    </head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand mx-3 " href="index.html">Questionário sobre o filme</a>
+          
+        
+          
+           
+          </div>
+        
+      
+            <a href="estatisticas.html" class="btn btn-outline-primary mx-3 me-sm-2 estatisticas">Estatisticas</a>
+             
+        </div>
+      
+      </nav>
+
+    
+
+      <div class="container my-3 border rounded">
+          <h2 class="text-center my-3">Formulário</h2>
+        <form>
+
+            <div class="row mx-3">
+                <div class="form-group col">
+                    <label for="idade">Idade:</label>
+                    <input type="number" class="form-control my-2 " placeholder="Digite sua idade" id="idade">
+                    
+                </div>
+                <div class="form-group col">
+                    <label for="sexo">Sexo:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexo" id="radioFem" value="Feminino" checked>
+                        <label class="form-check-label" for="radioFem">
+                          Feminino
+                        </label>
+                      </div>
+                      <div class="form-check" if>
+                        <input class="form-check-input" type="radio" name="sexo" id="radioMasc" value="Masculino">
+                        <label class="form-check-label" for="radioMasc">
+                          Masculino
+                        </label>
+                      </div>
+                </div>
+
+                <div class="form-group  my-4">
+                    
+                  <h5>O que achou do filme?</h5>
+                    <div class="row mx-3">
+                        <div class="form-check col">
+                            <input class="form-check-input" type="radio" name="opiniao" id="otimo" value="4" >
+                            <label class="form-check-label" for="radioFem">
+                              Ótimo
+                            </label>
+                          </div>
+                          <div class="form-check col">
+                            <input class="form-check-input" type="radio" name="opiniao" id="bom" value="3" >
+                            <label class="form-check-label" for="radioFem">
+                              Bom
+                            </label>
+                       </div>
+                       <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="opiniao" id="regular" value="2" >
+                        <label class="form-check-label" for="radioFem">
+                          regular
+                        </label>
+                   </div>
+                   <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="opiniao" id="pessimo" value="1" >
+                    <label class="form-check-label" for="radioFem">
+                      Péssimo
+                    </label>
+               </div>
+            </div>
+                    </div>
+                    </div>
+           
+            <div class="d-grid gap-2 mx-3" id="div-btn">
+                <button type="submit" class="btn btn-primary my-3" id="enviar">Enviar</button>
+                </div>
+          
+          </form>
+      </div>
+
+
+
+
+    
+</body>
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+</html>

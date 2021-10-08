@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Atividade 9</title>
+</head>
+
+<style>
+
+@media (max-width:600px) {
+    .row {
+    flex-direction: column!important;
+}
+
+}
+
+
+
+</style>
+
+<body>
+
+<header>
+    <h1 class="text-center py-2 ">Funções</h1>
+</header>
+    
+<div class="container">
+    <h2 class="text-center">Digite 3 números quaisquer:</h2>
+    <div class="row">
+        <div class="col">
+            <label for="num1" class="form-label mt-4">Primeiro número</label>
+            <input type="number" class="form-control" id="num1"  placeholder="Número 1">
+        </div>
+        <div class="col">
+            <label for="num2" class="form-label mt-4">Segundo número</label>
+            <input type="number" class="form-control" id="num2" placeholder="Número 2">
+        </div>
+        <div class="col">
+            <label for="num3" class="form-label mt-4">Terceiro número</label>
+            <input type="number" class="form-control" id="num3"  placeholder="Número 3">
+        </div>
+   </div>
+   <div class="d-grid gap-2 mt-3" id="div-btn">
+    <button type="submit" id="maior"class="btn btn-primary my-1">Ache o maior número.</button>
+   
+        <button type="submit" id="ordem" class="btn btn-primary my-1">Ordenar os números em modo crescente</button>
+        </div>
+  
+
+</div>
+    
+</body>
+ 
+<script src="app.js"></script>
+</html>
