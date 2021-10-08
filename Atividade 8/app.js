@@ -10,16 +10,85 @@
 const enviar = document.getElementById('enviar');
 
 //contadores
-let submitValue = 0;
-let countFem = 0;
-let countMasc = 0;
-let somaIdade = 0;
-let countOtimo = 0;
-let countBom = 0;
-let countPessimo = 0;
-let mediaIdade;
-let porcentOtimo = 0;
-let porcentBom = 0;
+let enviadoVezes;
+let qntdeFem;
+let qntdeMasc;
+let somaIdades;
+let contadorOtimo;
+let contadorBom;
+let contadorPessimo;
+let mediaIdades;
+let porcentagemOtimo;
+let porcentagemBom;
+
+
+// verificar storage
+if (localStorage.getItem('enviadoVezes') === null)  {
+    enviadoVezes = 0;
+} else {
+    enviadoVezes = parseInt(localStorage.getItem('enviadoVezes'));
+}
+
+if (localStorage.getItem('qntdeFem') === null)  {
+    qntdeFem = 0;
+} else {
+    qntdeFem = parseInt(localStorage.getItem('qntdeFem'));
+}
+if (localStorage.getItem('qntdeMasc') === null)  {
+    qntdeMasc = 0;
+} else {
+    qntdeMasc = parseInt(localStorage.getItem('qntdeMasc'));
+}
+
+if (localStorage.getItem('somaIdades') === null)  {
+    somaIdades = 0;
+} else {
+    somaIdades = parseInt(localStorage.getItem('somaIdades'));
+}
+
+if (localStorage.getItem('contadorOtimo') === null)  {
+    contadorOtimo = 0;
+} else {
+    contadorOtimo = parseInt(localStorage.getItem('contadorOtimo'));
+}
+
+if (localStorage.getItem('contadorBom') === null)  {
+    contadorBom = 0;
+} else {
+    contadorBom= parseInt(localStorage.getItem('contadorBom'));
+}
+if (localStorage.getItem('contadorBom') === null)  {
+    contadorBom = 0;
+} else {
+    contadorBom= parseInt(localStorage.getItem('contadorBom'));
+}
+
+
+if (localStorage.getItem('contadorPessimo') === null)  {
+    contadorPessimo = 0;
+} else {
+    contadorPessimo = localStorage.getItem('contadorPessimo');
+}
+
+if (localStorage.getItem('porcentagemBom') === null)  {
+    porcentagemBom = 0;
+} else {
+    porcentagemBom = localStorage.getItem('porcentagemBom');
+}
+
+if (localStorage.getItem('porcentagemOtimo') === null)  {
+    porcentagemOtimo = 0;
+} else {
+    porcentagemOtimo = localStorage.getItem('porcentagemOtimo');
+}
+
+
+
+// verifica
+
+
+
+
 
 
 var atualizarEstat = function(e){
@@ -30,8 +99,7 @@ var atualizarEstat = function(e){
     const bom = document.getElementById('bom');
     const regular = document.getElementById('regular');
     const pessimo = document.getElementById('pessimo');
-   
-
+  
     if(isNaN(idade) || idade =='' ){ // verifica se idade está vazio
         alert("Preencha o formulário corretamente");
     } else {
@@ -40,66 +108,121 @@ var atualizarEstat = function(e){
         
             if(otimo.checked) {
                 
-                submitValue += 1; // numero de vezes que o form foi enviado
-                countFem += 1; // numero de vezes que o form foi enviado
-                countOtimo += 1;
-                somaIdade += parseInt(idade);
-                mediaIdade = somaIdade/submitValue;
-                porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
-                // armazenar no storage
-                localStorage.setItem('submitValue',submitValue);
-                localStorage.setItem('countFem',countFem);
-                localStorage.setItem('mediaIdade',mediaIdade);
-                localStorage.setItem('porcentOtimo',porcentOtimo);
-                localStorage.setItem('porcentBom',porcentBom);
-
+                enviadoVezes += 1; // numero de vezes que o form foi enviado
+                qntdeFem += 1; // numero de vezes que o form foi enviado
+                contadorOtimo += 1;
+                somaIdades += parseInt(idade);
+                mediaIdades = somaIdades/enviadoVezes;
+                porcentagemOtimo = ((parseInt(contadorOtimo) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                porcentagemBom = ((parseInt(contadorBom) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                
                 alert('Voto adicionado!');
+
+                localStorage.setItem('enviadoVezes',enviadoVezes);
+                localStorage.setItem('qntdeFem',qntdeFem);
+                localStorage.setItem('qntdeMasc',qntdeMasc);
+                localStorage.setItem('mediaIdades',mediaIdades);
+                localStorage.setItem('somaIdades',somaIdades);
+                localStorage.setItem('contadorOtimo', contadorOtimo);
+                localStorage.setItem('contadorBom', contadorBom);
+                localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+                localStorage.setItem('porcentagemBom',porcentagemBom);
+                
+                console.log(enviadoVezes,
+                    qntdeFem,
+                    qntdeMasc,
+                    somaIdades,
+                    contadorOtimo,
+                    contadorBom,
+                    contadorPessimo,
+                    mediaIdades,
+                    porcentagemOtimo,
+                    porcentagemBom
+                    )
                 
             } else if(bom.checked){
-                submitValue += 1;
-                countFem += 1;
-                somaIdade += parseInt(idade);
-                mediaIdade = somaIdade/submitValue;
-                countBom += 1;
-                porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
-                localStorage.setItem('submitValue',submitValue);
-                localStorage.setItem('countFem',countFem);
-                localStorage.setItem('mediaIdade',mediaIdade);
-                localStorage.setItem('porcentOtimo',porcentOtimo);
-                localStorage.setItem('porcentBom',porcentBom);
+                enviadoVezes += 1;
+                qntdeFem += 1;
+                somaIdades += parseInt(idade);
+                mediaIdades = somaIdades/enviadoVezes;
+                contadorBom += 1;
+                porcentagemOtimo = ((parseInt(contadorOtimo) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                porcentagemBom = ((parseInt(contadorBom) /enviadoVezes) * 100 ).toFixed(0) + '%';
+               
+                console.log(enviadoVezes,
+                    qntdeFem,
+                    qntdeMasc,
+                    somaIdades,
+                    contadorOtimo,
+                    contadorBom,
+                    contadorPessimo,
+                    mediaIdades,
+                    porcentagemOtimo,
+                    porcentagemBom
+                    )
+                
+                    
+                localStorage.setItem('enviadoVezes',enviadoVezes);
+                localStorage.setItem('qntdeFem',qntdeFem);
+                localStorage.setItem('qntdeMasc',qntdeMasc);
+                localStorage.setItem('mediaIdades',mediaIdades);
+                localStorage.setItem('somaIdades',somaIdades);
+                localStorage.setItem('contadorOtimo', contadorOtimo);
+                localStorage.setItem('contadorBom', contadorBom);
+                localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+                localStorage.setItem('porcentagemBom',porcentagemBom);
                 alert('Voto adicionado!');
             }else if(regular.checked){
-                submitValue += 1;
-                countFem += 1;
+                enviadoVezes += 1;
+                qntdeFem += 1;
                
-                somaIdade += parseInt(idade);
+                somaIdades += parseInt(idade);
 
-                mediaIdade = somaIdade/submitValue;
-                porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
-               localStorage.setItem('submitValue',submitValue);
-                localStorage.setItem('countFem',countFem);
-                localStorage.setItem('mediaIdade',mediaIdade);
-                localStorage.setItem('porcentOtimo',porcentOtimo);
-                localStorage.setItem('porcentBom',porcentBom);
+                mediaIdades = somaIdades/enviadoVezes;
+                porcentagemOtimo = ((parseInt(contadorOtimo) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                porcentagemBom = ((parseInt(contadorBom) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                
+                localStorage.setItem('enviadoVezes',enviadoVezes);
+                localStorage.setItem('qntdeFem',qntdeFem);
+                localStorage.setItem('qntdeMasc',qntdeMasc);
+                localStorage.setItem('mediaIdades',mediaIdades);
+                localStorage.setItem('somaIdades',somaIdades);
+                localStorage.setItem('contadorOtimo', contadorOtimo);
+                localStorage.setItem('contadorBom', contadorBom);
+                localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+                localStorage.setItem('porcentagemBom',porcentagemBom);
+              
                 alert('Voto adicionado!');
             }else if(pessimo.checked){
-                submitValue += 1;
-                countFem += 1;
+                enviadoVezes += 1;
+                qntdeFem += 1;
                
-                somaIdade += parseInt(idade);
-                mediaIdade = somaIdade/submitValue;
-                countPessimo += 1;
-                porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
-                localStorage.setItem('submitValue',submitValue);
-                localStorage.setItem('countFem',countFem);
-                localStorage.setItem('mediaIdade',mediaIdade);
-                localStorage.setItem('countPessimo',countPessimo);
-                localStorage.setItem('porcentOtimo',porcentOtimo);
-                localStorage.setItem('porcentBom',porcentBom);
+                somaIdades += parseInt(idade);
+                mediaIdades = somaIdades/enviadoVezes;
+                contadorPessimo += 1;
+                porcentagemOtimo = ((parseInt(contadorOtimo) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                porcentagemBom = ((parseInt(contadorBom) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                console.log(enviadoVezes,
+                    qntdeFem,
+                    qntdeMasc,
+                    somaIdades,
+                    contadorOtimo,
+                    contadorBom,
+                    contadorPessimo,
+                    mediaIdades,
+                    porcentagemOtimo,
+                    porcentagemBom
+                    )
+                    
+                localStorage.setItem('enviadoVezes',enviadoVezes);
+                localStorage.setItem('qntdeFem',qntdeFem);
+                localStorage.setItem('qntdeMasc',qntdeMasc);
+                localStorage.setItem('mediaIdades',mediaIdades);
+                localStorage.setItem('somaIdades',somaIdades);
+                localStorage.setItem('contadorOtimo', contadorOtimo);
+                localStorage.setItem('contadorBom', contadorBom);
+                localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+                localStorage.setItem('porcentagemBom',porcentagemBom);
                 alert('Voto adicionado!');
             } else {
                 // valição opinião
@@ -108,68 +231,130 @@ var atualizarEstat = function(e){
 
         } else if (radioMasc.checked){
             if(otimo.checked) {
-                submitValue += 1; // numero de vezes que o form foi enviado
-                countMasc += 1; // numero de vezes que o form foi enviado
-                countOtimo += 1;
-                somaIdade += parseInt(idade);
-                mediaIdade = somaIdade/submitValue;
-                porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
-                localStorage.setItem('submitValue',submitValue);
-                localStorage.setItem('countMasc',countMasc);
-                localStorage.setItem('mediaIdade',mediaIdade);
-                localStorage.setItem('porcentOtimo',porcentOtimo);
-            
-                localStorage.setItem('porcentBom',porcentBom);
+                enviadoVezes += 1; // numero de vezes que o form foi enviado
+                qntdeMasc += 1; // numero de vezes que o form foi enviado
+                contadorOtimo += 1;
+                somaIdades += parseInt(idade);
+                mediaIdades = somaIdades/enviadoVezes;
+                porcentagemOtimo = ((parseInt(contadorOtimo) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                porcentagemBom = ((parseInt(contadorBom) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                
+                localStorage.setItem('enviadoVezes',enviadoVezes);
+                localStorage.setItem('qntdeFem',qntdeFem);
+                localStorage.setItem('qntdeMasc',qntdeMasc);
+                localStorage.setItem('mediaIdades',mediaIdades);
+                localStorage.setItem('somaIdades',somaIdades);
+                localStorage.setItem('contadorOtimo', contadorOtimo);
+                localStorage.setItem('contadorBom', contadorBom);
+                localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+                localStorage.setItem('porcentagemBom',porcentagemBom);
+                console.log(enviadoVezes,
+                    qntdeFem,
+                    qntdeMasc,
+                    somaIdades,
+                    contadorOtimo,
+                    contadorBom,
+                    contadorPessimo,
+                    mediaIdades,
+                    porcentagemOtimo,
+                    porcentagemBom
+                    )
                 alert('Voto adicionado!');
 
             } else if(bom.checked){
-                submitValue += 1;
-                countMasc += 1;
-                somaIdade += parseInt(idade);
-                mediaIdade = somaIdade/submitValue;
-                countBom += 1;
-                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
-                porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
+                enviadoVezes += 1;
+                qntdeMasc += 1;
+                somaIdades += parseInt(idade);
+                mediaIdades = somaIdades/enviadoVezes;
+                contadorBom += 1;
+                porcentagemBom = ((parseInt(contadorBom) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                porcentagemOtimo = ((parseInt(contadorOtimo) /enviadoVezes) * 100 ).toFixed(0) + '%';
                
-                localStorage.setItem('submitValue',submitValue);
-                localStorage.setItem('countMasc',countMasc);
-                localStorage.setItem('mediaIdade',mediaIdade);
-                localStorage.setItem('porcentOtimo',porcentOtimo);
-                localStorage.setItem('porcentBom',porcentBom);
+                console.log(enviadoVezes,
+                    qntdeFem,
+                    qntdeMasc,
+                    somaIdades,
+                    contadorOtimo,
+                    contadorBom,
+                    contadorPessimo,
+                    mediaIdades,
+                    porcentagemOtimo,
+                    porcentagemBom
+                    )
+                    
+                localStorage.setItem('enviadoVezes',enviadoVezes);
+                localStorage.setItem('qntdeFem',qntdeFem);
+                localStorage.setItem('qntdeMasc',qntdeMasc);
+                localStorage.setItem('mediaIdades',mediaIdades);
+                localStorage.setItem('somaIdades',somaIdades);
+                localStorage.setItem('contadorOtimo', contadorOtimo);
+                localStorage.setItem('contadorBom', contadorBom);
+                localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+                localStorage.setItem('porcentagemBom',porcentagemBom);
                 alert('Voto adicionado!');
 
             }else if(regular.checked){
-                submitValue += 1;
-                countMasc+= 1;
+                enviadoVezes += 1;
+                qntdeMasc+= 1;
                 
-                somaIdade += parseInt(idade);
-                mediaIdade = somaIdade/submitValue;
-                porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
-                localStorage.setItem('submitValue',submitValue);
-                localStorage.setItem('countMasc',countMasc);
-                localStorage.setItem('mediaIdade',mediaIdade);
-                localStorage.setItem('porcentOtimo',porcentOtimo);
-                localStorage.setItem('porcentBom',porcentBom);
+                somaIdades += parseInt(idade);
+                mediaIdades = somaIdades/enviadoVezes;
+                porcentagemOtimo = ((parseInt(contadorOtimo) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                porcentagemBom = ((parseInt(contadorBom) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                console.log(enviadoVezes,
+                    qntdeFem,
+                    qntdeMasc,
+                    somaIdades,
+                    contadorOtimo,
+                    contadorBom,
+                    contadorPessimo,
+                    mediaIdades,
+                    porcentagemOtimo,
+                    porcentagemBom
+                    )
+                    
+                localStorage.setItem('enviadoVezes',enviadoVezes);
+                localStorage.setItem('qntdeFem',qntdeFem);
+                localStorage.setItem('qntdeMasc',qntdeMasc);
+                localStorage.setItem('mediaIdades',mediaIdades);
+                localStorage.setItem('somaIdades',somaIdades);
+                localStorage.setItem('contadorOtimo', contadorOtimo);
+                localStorage.setItem('contadorBom', contadorBom);
+                localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+                localStorage.setItem('porcentagemBom',porcentagemBom);
                 alert('Voto adicionado!');
                 
                
             }else if(pessimo.checked){
-                submitValue += 1;
-                countMasc+= 1;
+                enviadoVezes += 1;
+                qntdeMasc+= 1;
                 
-                somaIdade += parseInt(idade);
-                mediaIdade = somaIdade/submitValue;
-                countPessimo+= 1;
-                porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
-                localStorage.setItem('submitValue',submitValue);
-                localStorage.setItem('countMasc',countMasc);
-                localStorage.setItem('mediaIdade',mediaIdade);
-                localStorage.setItem('countPessimo',countPessimo);
-                localStorage.setItem('porcentOtimo',porcentOtimo);
-                localStorage.setItem('porcentBom',porcentBom);
+                somaIdades += parseInt(idade);
+                mediaIdades = somaIdades/enviadoVezes;
+                contadorPessimo+= 1;
+                porcentagemOtimo = ((parseInt(contadorOtimo) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                porcentagemBom = ((parseInt(contadorBom) /enviadoVezes) * 100 ).toFixed(0) + '%';
+                console.log(enviadoVezes,
+                    qntdeFem,
+                    qntdeMasc,
+                    somaIdades,
+                    contadorOtimo,
+                    contadorBom,
+                    contadorPessimo,
+                    mediaIdades,
+                    porcentagemOtimo,
+                    porcentagemBom
+                    )
+                
+                    localStorage.setItem('enviadoVezes',enviadoVezes);
+                    localStorage.setItem('qntdeFem',qntdeFem);
+                    localStorage.setItem('qntdeMasc',qntdeMasc);
+                    localStorage.setItem('mediaIdades',mediaIdades);
+                    localStorage.setItem('somaIdades',somaIdades);
+                    localStorage.setItem('contadorOtimo', contadorOtimo);
+                    localStorage.setItem('contadorBom', contadorBom);
+                    localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+                    localStorage.setItem('porcentagemBom',porcentagemBom);
                  alert('Voto adicionado!');
             } else {
                 // validação opinião
@@ -192,3 +377,11 @@ e.preventDefault();
 enviar.addEventListener('click', atualizarEstat);
 
 
+
+
+// localStorage.setItem('enviadoVezes',enviadoVezes);
+//                 localStorage.setItem('qntdeMasc',qntdeMasc);
+//                 localStorage.setItem('mediaIdades',mediaIdades);
+//                 localStorage.setItem('contadorPessimo',contadorPessimo);
+//                 localStorage.setItem('porcentagemOtimo',porcentagemOtimo);
+//                 localStorage.setItem('porcentagemBom',porcentagemBom);
