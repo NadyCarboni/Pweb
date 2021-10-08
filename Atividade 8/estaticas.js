@@ -1,4 +1,4 @@
-let enviadoVezes,qntdeFem, qntdeMasc, mediaIdades, porcentagemOtimo, porcentagemBom, countadorPessimo;
+let enviadoVezes,qntdeFem, qntdeMasc, mediaIdades, porcentagemOtimo, porcentagemBom, contadorPessimo;
 
 if (localStorage.getItem('enviadoVezes') === null)  {
     enviadoVezes = 0;
@@ -85,7 +85,7 @@ estatisticas.innerHTML = `  <div class="row my-2">
 <p class="lead mt-3">Porcentagem que acharam o filme ótimo: </h6><div class="progress">
 <div class="progress-bar bg-success" role="progressbar" style="width: ${porcentagemOtimo};" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-<p  class="col lead text-center my-3">Pessoas que acharam o filme péssimo <span class="text-primary">${countadorPessimo}</span></p> 
+<p  class="col lead text-center my-3">Pessoas que acharam o filme péssimo <span class="text-primary">${contadorPessimo}</span></p> 
 
 `;
 
