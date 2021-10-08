@@ -46,7 +46,7 @@ var atualizarEstat = function(e){
                 somaIdade += parseInt(idade);
                 mediaIdade = somaIdade/submitValue;
                 porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-
+                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
                 // armazenar no storage
                 localStorage.setItem('submitValue',submitValue);
                 localStorage.setItem('countFem',countFem);
@@ -114,7 +114,7 @@ var atualizarEstat = function(e){
                 somaIdade += parseInt(idade);
                 mediaIdade = somaIdade/submitValue;
                 porcentOtimo = ((parseInt(countOtimo) /submitValue) * 100 ).toFixed(0) + '%';
-
+                porcentBom = ((parseInt(countBom) /submitValue) * 100 ).toFixed(0) + '%';
                 localStorage.setItem('submitValue',submitValue);
                 localStorage.setItem('countMasc',countMasc);
                 localStorage.setItem('mediaIdade',mediaIdade);
@@ -170,7 +170,7 @@ var atualizarEstat = function(e){
                 localStorage.setItem('countPessimo',countPessimo);
                 localStorage.setItem('porcentOtimo',porcentOtimo);
                 localStorage.setItem('porcentBom',porcentBom);
-                alert('Voto adicionado!');
+                 alert('Voto adicionado!');
             } else {
                 // validação opinião
                 alert("Preencha o formulário corretamente");
