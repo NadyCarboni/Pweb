@@ -53,6 +53,8 @@ var atualizarEstat = function(e){
                 localStorage.setItem('mediaIdade',mediaIdade);
                 localStorage.setItem('porcentOtimo',porcentOtimo);
                 localStorage.setItem('porcentBom',porcentBom);
+
+                alert('Voto adicionado!');
                 
             } else if(bom.checked){
                 submitValue += 1;
@@ -67,6 +69,7 @@ var atualizarEstat = function(e){
                 localStorage.setItem('mediaIdade',mediaIdade);
                 localStorage.setItem('porcentOtimo',porcentOtimo);
                 localStorage.setItem('porcentBom',porcentBom);
+                alert('Voto adicionado!');
             }else if(regular.checked){
                 submitValue += 1;
                 countFem += 1;
@@ -81,6 +84,7 @@ var atualizarEstat = function(e){
                 localStorage.setItem('mediaIdade',mediaIdade);
                 localStorage.setItem('porcentOtimo',porcentOtimo);
                 localStorage.setItem('porcentBom',porcentBom);
+                alert('Voto adicionado!');
             }else if(pessimo.checked){
                 submitValue += 1;
                 countFem += 1;
@@ -96,6 +100,7 @@ var atualizarEstat = function(e){
                 localStorage.setItem('countPessimo',countPessimo);
                 localStorage.setItem('porcentOtimo',porcentOtimo);
                 localStorage.setItem('porcentBom',porcentBom);
+                alert('Voto adicionado!');
             } else {
                 // valição opinião
                 alert("Preencha o formulário corretamente");
@@ -116,6 +121,7 @@ var atualizarEstat = function(e){
                 localStorage.setItem('porcentOtimo',porcentOtimo);
             
                 localStorage.setItem('porcentBom',porcentBom);
+                alert('Voto adicionado!');
 
             } else if(bom.checked){
                 submitValue += 1;
@@ -131,6 +137,7 @@ var atualizarEstat = function(e){
                 localStorage.setItem('mediaIdade',mediaIdade);
                 localStorage.setItem('porcentOtimo',porcentOtimo);
                 localStorage.setItem('porcentBom',porcentBom);
+                alert('Voto adicionado!');
 
             }else if(regular.checked){
                 submitValue += 1;
@@ -145,6 +152,7 @@ var atualizarEstat = function(e){
                 localStorage.setItem('mediaIdade',mediaIdade);
                 localStorage.setItem('porcentOtimo',porcentOtimo);
                 localStorage.setItem('porcentBom',porcentBom);
+                alert('Voto adicionado!');
                 
                
             }else if(pessimo.checked){
@@ -162,6 +170,7 @@ var atualizarEstat = function(e){
                 localStorage.setItem('countPessimo',countPessimo);
                 localStorage.setItem('porcentOtimo',porcentOtimo);
                 localStorage.setItem('porcentBom',porcentBom);
+                alert('Voto adicionado!');
             } else {
                 // validação opinião
                 alert("Preencha o formulário corretamente");
