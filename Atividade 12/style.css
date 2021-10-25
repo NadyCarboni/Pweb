@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .botoes {
+  margin: 2rem;
+  display: flex;
+}
+
+.container .botoes button {
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 5px 10px 5px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 1s;
+  margin: 0 0.5rem;
+}
+
+.container .botoes button::after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 3px;
+  left: 3px;
+  transition: 0.2s;
+}
+.container .botoes button:hover {
+  letter-spacing: 2px;
+}
