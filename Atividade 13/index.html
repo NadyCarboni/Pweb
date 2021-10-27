@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Mudar letras</title>
+</head>
+<body>
+    
+    <h1 class="text-center bg-primary text-light py-3">Mudar letras</h1>
+
+    <section class="container">
+        <form>
+            <div class="form-group">
+                <label for="texto" class="my-2"><strong>Digite seu texto aqui:</strong></label>
+                <textarea name="texto" id="texto" cols="30" rows="10" 
+                class="form-control" placeholder="Digite seu texto..."></textarea>
+            </div>
+            <p>Caracteres: <span id="contador">0</span></p>
+            <div class="my-3 text-center">
+            <button class="btn btn-primary my-1" id="btnMaiusculo">TODAS AS LETRAS MAIÚSCULAS</button>
+            <button class="btn btn-primary my-1" id="btnMinusculo">todas as letras minúsculas</button>
+            <button class="btn btn-primary my-1" id="btnPrimeiraLetra">Todas As Primeiras Letras Maiúsculas</button>
+            </div>
+
+
+        </form>
+    </section>
+
+</body>
+<script src="index.js"></script>
+</html>

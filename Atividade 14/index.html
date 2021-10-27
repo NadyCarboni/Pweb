@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar comentário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Main content-->
+      <div class="box">
+        <!-- Ilustração-->
+        <aside class="ilustracao">
+          <img src="./lemon-gc2d86980d_1920.jpg" alt="ilustracao" />
+        </aside>
+        <!-- Form pra valer -->
+        <div class="form">
+          <h2 class="form-title">Formulário principal</h2>
+          <form action="">
+            <div class="form-control">
+              <!-- campo nome -->
+              <label for="nome">Nome</label>
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Digite seu nome..."
+              />
+            </div>
+            <!--Campo email-->
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Digite seu email..."
+              />
+            </div>
+            <!--Campo comentario-->
+            <div class="form-control">
+              <label for="comentario">Comentário</label>
+              <textarea
+                name="comentario"
+                id="comentario"
+                placeholder="Digite seu comentário..."
+              ></textarea>
+            </div>
+            <div class="form-radio">
+              <label>Primeira vez na página?</label>
+              <div class="radio">
+                <label for="sim">Sim</label>
+                <input type="radio" name="opc" id="sim" />
+                <label for="nao">Não</label>
+                <input type="radio" name="opc" id="nao" />
+              </div>
+            </div>
+          </form>
+          <button id="enviar">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
